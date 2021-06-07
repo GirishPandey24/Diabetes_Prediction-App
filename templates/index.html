@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Diabetes Prediction</title>
+</head>
+<body style="background-color:grey;">
+<center>
+	<h1>Diabetes Prediction Web App</h1>
+<img src='\static\download.jpg' alt="flower"><br><br>
+<div class="container text-center">
+	<form action="/predict" method="POST"><!--/predict uthaya @app.route se from app.py file-->
+		<table>
+			<tr>
+				<td align="right">Enter Pregnancies</td>
+				<td align="left"><input type="text" name="Pregnancies" placeholder="Enter Pregnancies"></td>
+			</tr>
+			<tr>
+				<td align="right">Enter Glucose</td>
+				<td align="left"><input type="text" name="Glucose" placeholder="Enter Glucose"></td>
+			</tr>
+			<tr>
+				<td align="right">Enter BloodPressure</td>
+				<td align="left"><input type="text" name="BloodPressure" placeholder="Enter BloodPressure"></td>
+			</tr>
+			<tr>
+				<td align="right">Enter SkinThickness</td>
+				<td align="left"><input type="text" name="SkinThickness" placeholder="Enter SkinThickness"></td>
+			</tr>
+			<tr>
+				<td align="right">Enter Insulin</td>
+				<td align="left"><input type="text" name="Insulin" placeholder="Enter Insulin"></td>
+			</tr>
+			<tr>
+				<td align="right">Enter BMI</td>
+				<td align="left"><input type="text" name="BMI" placeholder="Enter BMI"></td>
+			</tr>
+			<tr>
+				<td align="right">Enter DiabetesPedigreeFunction</td>
+				<td align="left"><input type="text" name="DiabetesPedigreeFunction" placeholder="Enter DiabetesPedigreeFunction"></td>
+			</tr>
+			<tr>
+				<td align="right">Enter Age</td>
+				<td align="left"><input type="text" name="Age" placeholder="Enter Age"></td>
+			</tr>
+			
+		</table>
+		<br><br>
+		<button class='btn btn-success'>Predict</button><!--btn-success due to this button color is green-->
+	</form>
+</div>
+<div class="row">
+	{% if label %}
+		{% if label==1 %}
+			<h2 style="color":green>Result:Positive</h2>
+		{% else %}
+			<h2 style="color":red>Result:Negative</h2>
+		{% endif %}
+	{% endif %}
+</div>
+	
+</center>
+</body>
+</html>
